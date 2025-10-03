@@ -1,0 +1,17 @@
+{
+  "extends": "./tsconfig.node.json",
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "baseUrl": "./src",
+    "paths": {
+  "@components/*": ["components/*"],
+  "@styles/*": ["styles/*"],
+  "@data/*": ["data/*"],
+  "@hooks/*": ["hooks/*"],
+  "@layouts/*": ["layouts/*"],
+  "@pages/*": ["pages/*"]
+    }
+  },
+  "include": ["src"],
+  "references": [{ "path": "./tsconfig.node.json" }]
+}

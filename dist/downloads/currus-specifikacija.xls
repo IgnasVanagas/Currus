@@ -1,0 +1,83 @@
+<?xml version="1.0"?>
+<?mso-application progid="Excel.Sheet"?>
+<Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet"
+  xmlns:o="urn:schemas-microsoft-com:office:office"
+  xmlns:x="urn:schemas-microsoft-com:office:excel"
+  xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"
+  xmlns:html="http://www.w3.org/TR/REC-html40">
+  <DocumentProperties xmlns="urn:schemas-microsoft-com:office:office">
+    <Author>Currus Baldai</Author>
+    <LastAuthor>Currus Baldai</LastAuthor>
+    <Created>2025-10-03T00:00:00Z</Created>
+    <Version>16.00</Version>
+  </DocumentProperties>
+  <Styles>
+    <Style ss:ID="Default" ss:Name="Normal">
+      <Alignment ss:Vertical="Center"/>
+      <Font ss:FontName="Calibri" ss:Size="11"/>
+    </Style>
+    <Style ss:ID="sHeader">
+      <Font ss:FontName="Calibri" ss:Bold="1" ss:Size="12"/>
+      <Interior ss:Color="#EEE5E5" ss:Pattern="Solid"/>
+    </Style>
+    <Style ss:ID="sCurrency">
+      <NumberFormat ss:Format="\0022€\0022\ \#\,##0.00"/>
+    </Style>
+  </Styles>
+  <Worksheet ss:Name="Specifikacija">
+    <Table ss:ExpandedColumnCount="6" ss:ExpandedRowCount="8" x:FullColumns="1" x:FullRows="1">
+      <Column ss:AutoFitWidth="1" ss:Width="220"/>
+      <Column ss:AutoFitWidth="1" ss:Width="120"/>
+      <Column ss:AutoFitWidth="1" ss:Width="80"/>
+      <Column ss:AutoFitWidth="1" ss:Width="80"/>
+      <Column ss:AutoFitWidth="1" ss:Width="120"/>
+      <Column ss:AutoFitWidth="1" ss:Width="160"/>
+      <Row ss:Height="24">
+        <Cell ss:StyleID="sHeader"><Data ss:Type="String">Komponentas</Data></Cell>
+        <Cell ss:StyleID="sHeader"><Data ss:Type="String">Medžiaga</Data></Cell>
+        <Cell ss:StyleID="sHeader"><Data ss:Type="String">Ilgis (mm)</Data></Cell>
+        <Cell ss:StyleID="sHeader"><Data ss:Type="String">Kiekis</Data></Cell>
+        <Cell ss:StyleID="sHeader"><Data ss:Type="String">Paviršiaus apdaila</Data></Cell>
+        <Cell ss:StyleID="sHeader"><Data ss:Type="String">Pastabos</Data></Cell>
+      </Row>
+      <Row>
+        <Cell><Data ss:Type="String">Darbo stalo stalviršis</Data></Cell>
+        <Cell><Data ss:Type="String">LMDP 25 mm, juodas</Data></Cell>
+        <Cell><Data ss:Type="Number">1800</Data></Cell>
+        <Cell><Data ss:Type="Number">24</Data></Cell>
+        <Cell><Data ss:Type="String">Matinis lakavimas</Data></Cell>
+        <Cell><Data ss:Type="String">Integruoti kabelių praėjimai</Data></Cell>
+      </Row>
+      <Row>
+        <Cell><Data ss:Type="String">Spintelės fasadas</Data></Cell>
+        <Cell><Data ss:Type="String">MDF 19 mm, dažyta</Data></Cell>
+        <Cell><Data ss:Type="Number">720</Data></Cell>
+        <Cell><Data ss:Type="Number">48</Data></Cell>
+        <Cell><Data ss:Type="String">RAL 9003, pusiau matinis</Data></Cell>
+        <Cell><Data ss:Type="String">Push-to-open mechanika</Data></Cell>
+      </Row>
+      <Row>
+        <Cell><Data ss:Type="String">Metalinio rėmo profilis</Data></Cell>
+        <Cell><Data ss:Type="String">Plienas 30x30 mm</Data></Cell>
+        <Cell><Data ss:Type="Number">1500</Data></Cell>
+        <Cell><Data ss:Type="Number">24</Data></Cell>
+        <Cell><Data ss:Type="String">Miltelinis dažymas, RAL 9005</Data></Cell>
+        <Cell><Data ss:Type="String">Reikia suvirinimo sertifikato</Data></Cell>
+      </Row>
+      <Row>
+        <Cell><Data ss:Type="String">Akustinė pertvara</Data></Cell>
+        <Cell><Data ss:Type="String">PET veltinis, 12 mm</Data></Cell>
+        <Cell><Data ss:Type="Number">1400</Data></Cell>
+        <Cell><Data ss:Type="Number">30</Data></Cell>
+        <Cell><Data ss:Type="String">Lazerinis pjovimas, grafito spalva</Data></Cell>
+        <Cell><Data ss:Type="String">Montavimo komplektas įtrauktas</Data></Cell>
+      </Row>
+      <Row>
+        <Cell><Data ss:Type="String">Pristatymo terminas</Data></Cell>
+        <Cell ss:MergeAcross="1"><Data ss:Type="String">2025-11-30</Data></Cell>
+        <Cell ss:MergeAcross="2"><Data ss:Type="String">Sutarti dalinį pristatymą</Data></Cell>
+        <Cell><Data ss:Type="String">Kontaktas: rasa@currus.lt</Data></Cell>
+      </Row>
+    </Table>
+  </Worksheet>
+</Workbook>
