@@ -1,15 +1,44 @@
-# Currus Baldai – moderni React + Vite svetainė
+# Currus Baldai
 
-„Currus Baldai“ – tai pilnai tipizuota React + TypeScript svetainė, kuri atidarius pateikia dviejų krypčių pasirinkimą („Baldų gamyba“ & „Baldų detalių gamyba“) ir kiekvieną kryptį išskleidžia į atskirą, turtingą puslapį. Dizainas remiasi [currus.lt](https://currus.lt/) struktūra bei spalvine schema (#000000, #FFFFFF, #541010), o turinys pateiktas lietuviškai su „stock“ baldų fotografijomis.
+**Atidarius svetainę matosi du pasirinkimai:**
+
+1. Baldų gamyba
+2. Baldų detalių gamyba
+
+**Pasirinkus „Baldų detalių gamyba“** – atsidaro puslapis, panašus į [Baldinių ruošinių gamyba Archives - Dariaus verslo grupė](https://dariausverslogrupe.lt/tipas/baldiniu-ruosiniu-gamyba/), tik su modernesniu dizainu ir kontaktų forma puslapio apačioje.
+
+**Pasirinkus „Baldų gamyba“** – atsidaro puslapis, pilnas pavyzdžių, panašus į [PRODUKTAI - Currus kietieji baldai](https://currus.lt/produktai/).
+
+**Bendri reikalavimai:**
+
+- Visada turi būti „sticky header“
+- Laikinai turinį ir kontaktus imti iš [https://currus.lt/](https://currus.lt/).
+- Dizainas turi būti modernesnis.
+- Puslapio struktūra (URL adresai, pavadinimai) turi išlikti tokia pati kaip [https://currus.lt/](https://currus.lt/).
+- Kalba tik lietuvių
+
+**Funkcionalumas:**
+
+- Turi būti galimybė patiems keisti projektus (pvz. nuotraukas), naujienas, kontaktus ir nemažą dalį turinio.
+- Prie susisiekimo formos turi būti galimybė atsisiųsti „Excel“ failą, panašiai kaip [Pildyti užsakymo formą - Dariaus verslo grupė](https://dariausverslogrupe.lt/pildyti-uzsakymo-forma/).
+
+
+**Spalvų paletė:**
+
+- #000000
+- #FFFFFF
+- #541010 
+_(gali būti koreguojama, nėra galutinė)_
+
 
 ## Technologijos
 
-- [Vite](https://vitejs.dev/) + React 18 + TypeScript – greitas vystymas ir tipizacija
-- [React Router DOM](https://reactrouter.com/) – maršrutai ir puslapiai
-- [Framer Motion](https://www.framer.com/motion/) – sklandžios animacijos ir „scroll“ progresas
-- [React Scroll](https://www.npmjs.com/package/react-scroll) – švelnus judėjimas tarp sekcijų tos pačios krypties puslapyje
-- [React Hook Form](https://react-hook-form.com/) + [Zod](https://zod.dev/) – (pasirengusi integracijai) validuojama kontaktų forma
-- [React Hot Toast](https://react-hot-toast.com/) – vizualus grįžtamasis ryšys (aktyvuojamas integravus formą)
+- [Vite](https://vitejs.dev/) + React 18 
+- [React Router DOM](https://reactrouter.com/) 
+- [Framer Motion](https://www.framer.com/motion/)
+- [React Scroll](https://www.npmjs.com/package/react-scroll) 
+- [React Hook Form](https://react-hook-form.com/) + [Zod](https://zod.dev/) 
+- [React Hot Toast](https://react-hot-toast.com/)
 
 ## Struktūra ir turinys
 
@@ -42,9 +71,4 @@ Papildomi scenarijai:
 - `public/downloads/currus-specifikacija.xls` – Microsoft Excel suderinamas `.xls` šablonas, kurį galima pakeisti savo realiu dokumentu.
 - Nuotraukos naudoja [Unsplash](https://unsplash.com/) URL – pakanka juos pakeisti norimais resursais arba įkelti vietines bylas į `public/` katalogą.
 
-## Potencialios plėtros kryptys
 
-- Integruoti realų el. pašto siuntimą per pasirinktą paslaugą (`Formspree`, `Resend`, `AWS SES` ir pan.).
-- Įdiegti daugiakalbystę (EN/RU) kartu su CMS ar „headless“ valdymu.
-- Pridėti autentiškus klientų atsiliepimus, realių projektų galerijas ir 3D vizualizacijų peržiūras.
-- Integruoti kontaktų formos backend'ą ir siuntimo logiką.
