@@ -98,21 +98,23 @@ export const brand = {
   name: "Currus Baldai",
   tagline: "Baldų gamyba ir baldų detalių gamyba verslui ir interjero studijoms",
   contact: {
-    phone: "+370 620 12345",
-    email: "info@currus.lt",
-    address: "Žalgirio g. 88, Vilnius",
+    address: "Kauno g. 22, Ramučiai, Kauno raj.",
+    productionPhone: "+370 (600) 65 333",
+    servicesPhone: "+370 (670) 33 244",
+    fax: "8 (37) 362281",
+    email: "currus@currus.lt",
     workHours: "I–V 8:00–17:00"
   }
 };
 
 export const downloadLink = {
-  label: "Atsisiųsti specifikacijos šabloną (Excel)",
+  label: "atsisiųsti šabloną",
   href: "/downloads/currus-specifikacija.xls"
 };
 
 export const landingContent = {
   eyebrow: "Du strateginiai keliai",
-  title: "Pasirinkite, ko reikia jūsų verslui",
+  title: "Modernūs baldų sprendimai",
   description:
     "Dirbame su pilna baldų gamyba ir specializuotomis baldų detalėmis. Išsirinkite kryptį, kad parodytume tikslinius pajėgumus, įgyvendintus projektus ir atsakingą kontaktą.",
   options: [

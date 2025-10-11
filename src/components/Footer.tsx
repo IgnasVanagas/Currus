@@ -2,6 +2,8 @@ import { motion } from "framer-motion";
 import { Link, useLocation } from "react-router-dom";
 import { brand } from "@data/content";
 
+const sanitizePhone = (phone: string) => phone.replace(/[^+\d]/g, "");
+
 export const Footer = () => {
   const location = useLocation();
 
@@ -36,7 +38,19 @@ export const Footer = () => {
         </div>
         <div className="footer-meta">
           <a href={`mailto:${brand.contact.email}`}>{brand.contact.email}</a>
-          <a href={`tel:${brand.contact.phone}`}>{brand.contact.phone}</a>
+          <div>
+            Baldų gamyba: {" "}
+            <a href={`tel:${sanitizePhone(brand.contact.productionPhone)}`}>
+              {brand.contact.productionPhone}
+            </a>
+          </div>
+          <div>
+            Paslaugų užsakymai: {" "}
+            <a href={`tel:${sanitizePhone(brand.contact.servicesPhone)}`}>
+              {brand.contact.servicesPhone}
+            </a>
+          </div>
+          <div>Faksas: {brand.contact.fax}</div>
           <span>{brand.contact.address}</span>
         </div>
       </div>

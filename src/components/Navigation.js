@@ -1,18 +1,26 @@
 import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
 import { useEffect, useState } from "react";
-import { FiMenu, FiX } from "react-icons/fi";
+import { FiChevronDown, FiMenu, FiX } from "react-icons/fi";
 import { NavLink, useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
 import clsx from "clsx";
-import { downloadLink, furnitureContent, landingContent, partsContent } from "../data/content";
+import { downloadLink } from "../data/content";
 const navGroups = [
-    { label: landingContent.title, path: "/" },
-    { label: "Baldų gamyba", path: "/baldu-gamyba", sections: furnitureContent.navItems },
+    { label: "apie", path: "/" },
     {
-        label: "Baldų detalių gamyba",
-        path: "/baldu-detaliu-gamyba",
-        sections: partsContent.navItems
-    }
+        label: "Paslaugos",
+        path: "/paslaugos",
+        hasCaret: true,
+        items: [
+            { label: "Baldų dizainas ir projektavimas", path: "/paslaugos#baldu-dizainas" },
+            { label: "Interjero dizainas", path: "/paslaugos#interjero-dizainas" },
+            { label: "Laminuotos plokštės pjovimas ir kantavimas", path: "/paslaugos#laminuotos-plokstes" }
+        ]
+    },
+    { label: "Kaip pateikti užsakymą?", path: "/kaip-pateikti-uzsakyma" },
+    { label: "darbai", path: "/darbu-galerija" },
+    { label: "Naujienos", path: "/naujienos" },
+    { label: "Kontaktai", path: "/kontaktai" }
 ];
 export const Navigation = ({ downloadHref, downloadLabel }) => {
     const location = useLocation();
@@ -42,5 +50,5 @@ export const Navigation = ({ downloadHref, downloadLabel }) => {
     const toggleMenu = () => setIsMenuOpen((prev) => !prev);
     const handleNavigate = () => setIsMenuOpen(false);
     const downloadButton = effectiveDownloadHref && effectiveDownloadLabel && (_jsx("a", { className: "nav-download", href: effectiveDownloadHref, download: true, children: effectiveDownloadLabel }));
-    return (_jsx(motion.header, { className: clsx("nav-shell", { scrolled: hasScrolled }), initial: { y: -80, opacity: 0 }, animate: { y: 0, opacity: 1 }, transition: { duration: 0.6, ease: "easeOut" }, children: _jsxs("div", { className: "nav-container", children: [_jsxs(NavLink, { className: "brand", to: "/", children: [_jsx("span", { className: "brand-mark", children: "Currus" }), _jsx("span", { className: "brand-sub", children: "Baldai" })] }), _jsxs("nav", { className: clsx("nav-links", { open: isMenuOpen }), children: [_jsx("div", { className: "nav-primary", children: navGroups.map((group) => (_jsxs("div", { className: "nav-group", children: [_jsx(NavLink, { to: group.path, className: ({ isActive }) => clsx("nav-link", { active: isActive }), onClick: handleNavigate, children: group.label }), group.sections && (_jsx("div", { className: "nav-dropdown", children: group.sections.map((section) => (_jsx(NavLink, { to: `${group.path}#${section.id}`, className: ({ isActive }) => clsx("nav-dropdown-link", { active: isActive }), onClick: handleNavigate, children: section.label }, section.id))) }))] }, group.path))) }), downloadButton] }), _jsx("button", { className: "nav-toggle", "aria-label": "Perjungti navigacij\u0105", onClick: toggleMenu, children: isMenuOpen ? _jsx(FiX, { size: 24 }) : _jsx(FiMenu, { size: 24 }) })] }) }));
+    return (_jsx(motion.header, { className: clsx("nav-shell", { scrolled: hasScrolled }), initial: { y: -80, opacity: 0 }, animate: { y: 0, opacity: 1 }, transition: { duration: 0.6, ease: "easeOut" }, children: _jsxs("div", { className: "nav-container", children: [_jsxs(NavLink, { className: "brand", to: "/", children: [_jsx("span", { className: "brand-mark", children: "Currus" }), _jsx("span", { className: "brand-sub", children: "Baldai" })] }), _jsxs("nav", { className: clsx("nav-links", { open: isMenuOpen }), children: [_jsx("div", { className: "nav-primary", children: navGroups.map((group) => (group.items?.length ? (_jsxs("div", { className: "nav-group", children: [_jsxs(NavLink, { to: group.path, className: ({ isActive }) => clsx("nav-link", { active: isActive }), onClick: handleNavigate, children: [_jsx("span", { className: "nav-link-label", children: group.label }), (group.hasCaret || group.items?.length) && (_jsx(FiChevronDown, { className: "nav-link-caret", "aria-hidden": "true" }))] }), _jsx("div", { className: "nav-dropdown", children: group.items.map((item) => (_jsx(NavLink, { to: item.path, className: ({ isActive }) => clsx("nav-dropdown-link", { active: isActive }), onClick: handleNavigate, children: item.label }, item.path))) })] }, group.path)) : (_jsxs(NavLink, { to: group.path, className: ({ isActive }) => clsx("nav-link", { active: isActive }), onClick: handleNavigate, children: [_jsx("span", { className: "nav-link-label", children: group.label }), group.hasCaret && _jsx(FiChevronDown, { className: "nav-link-caret", "aria-hidden": "true" })] }, group.path)))) }), downloadButton] }), _jsx("button", { className: "nav-toggle", "aria-label": "Perjungti navigacij\u0105", onClick: toggleMenu, children: isMenuOpen ? _jsx(FiX, { size: 24 }) : _jsx(FiMenu, { size: 24 }) })] }) }));
 };

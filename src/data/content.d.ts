@@ -77,9 +77,11 @@ export declare const brand: {
     name: string;
     tagline: string;
     contact: {
-        phone: string;
-        email: string;
         address: string;
+        productionPhone: string;
+        servicesPhone: string;
+        fax: string;
+        email: string;
         workHours: string;
     };
 };

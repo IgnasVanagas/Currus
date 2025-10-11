@@ -1,20 +1,20 @@
 import { useEffect, useState } from "react";
-import { FiMenu, FiX } from "react-icons/fi";
+import { FiChevronDown, FiMenu, FiX } from "react-icons/fi";
 import { NavLink, useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
 import clsx from "clsx";
-import {
-  downloadLink,
-  furnitureContent,
-  landingContent,
-  partsContent,
-  type NavigationItem
-} from "../data/content";
+import { downloadLink } from "../data/content";
+
+type NavDropdownItem = {
+  label: string;
+  path: string;
+};
 
 type NavGroup = {
   label: string;
   path: string;
-  sections?: NavigationItem[];
+  hasCaret?: boolean;
+  items?: NavDropdownItem[];
 };
 
 type NavigationProps = {
@@ -23,13 +23,21 @@ type NavigationProps = {
 };
 
 const navGroups: NavGroup[] = [
-  { label: landingContent.title, path: "/" },
-  { label: "Baldų gamyba", path: "/baldu-gamyba", sections: furnitureContent.navItems },
+  { label: "apie", path: "/" },
   {
-    label: "Baldų detalių gamyba",
-    path: "/baldu-detaliu-gamyba",
-    sections: partsContent.navItems
-  }
+    label: "Paslaugos",
+    path: "/paslaugos",
+    hasCaret: true,
+    items: [
+      { label: "Baldų dizainas ir projektavimas", path: "/paslaugos#baldu-dizainas" },
+      { label: "Interjero dizainas", path: "/paslaugos#interjero-dizainas" },
+      { label: "Laminuotos plokštės pjovimas ir kantavimas", path: "/paslaugos#laminuotos-plokstes" }
+    ]
+  },
+  { label: "Kaip pateikti užsakymą?", path: "/kaip-pateikti-uzsakyma" },
+  { label: "darbai", path: "/darbu-galerija" },
+  { label: "Naujienos", path: "/naujienos" },
+  { label: "Kontaktai", path: "/kontaktai" }
 ];
 
 export const Navigation = ({ downloadHref, downloadLabel }: NavigationProps) => {
@@ -89,31 +97,42 @@ export const Navigation = ({ downloadHref, downloadLabel }: NavigationProps) => 
         <nav className={clsx("nav-links", { open: isMenuOpen })}>
           <div className="nav-primary">
             {navGroups.map((group) => (
-              <div key={group.path} className="nav-group">
+              group.items?.length ? (
+                <div key={group.path} className="nav-group">
+                  <NavLink
+                    to={group.path}
+                    className={({ isActive }) => clsx("nav-link", { active: isActive })}
+                    onClick={handleNavigate}
+                  >
+                    <span className="nav-link-label">{group.label}</span>
+                    {(group.hasCaret || group.items?.length) && (
+                      <FiChevronDown className="nav-link-caret" aria-hidden="true" />
+                    )}
+                  </NavLink>
+                  <div className="nav-dropdown">
+                    {group.items.map((item) => (
+                      <NavLink
+                        key={item.path}
+                        to={item.path}
+                        className={({ isActive }) => clsx("nav-dropdown-link", { active: isActive })}
+                        onClick={handleNavigate}
+                      >
+                        {item.label}
+                      </NavLink>
+                    ))}
+                  </div>
+                </div>
+              ) : (
                 <NavLink
+                  key={group.path}
                   to={group.path}
                   className={({ isActive }) => clsx("nav-link", { active: isActive })}
                   onClick={handleNavigate}
                 >
-                  {group.label}
+                  <span className="nav-link-label">{group.label}</span>
+                  {group.hasCaret && <FiChevronDown className="nav-link-caret" aria-hidden="true" />}
                 </NavLink>
-                {group.sections && (
-                  <div className="nav-dropdown">
-                    {group.sections.map((section) => (
-                      <NavLink
-                        key={section.id}
-                        to={`${group.path}#${section.id}`}
-                        className={({ isActive }) =>
-                          clsx("nav-dropdown-link", { active: isActive })
-                        }
-                        onClick={handleNavigate}
-                      >
-                        {section.label}
-                      </NavLink>
-                    ))}
-                  </div>
-                )}
-              </div>
+              )
             ))}
           </div>
           {downloadButton}
