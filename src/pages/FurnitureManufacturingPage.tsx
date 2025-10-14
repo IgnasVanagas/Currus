@@ -8,6 +8,7 @@ import {
   downloadLink,
   furnitureContent,
   type Assurance,
+  type Example,
   type CallToAction,
   type Highlight,
   type ProcessStep,
@@ -177,6 +178,32 @@ ty klientų patirtys tampa konkurenciniu pranašumu.
           <article key={item.title} className="card">
             <h3>{item.title}</h3>
             <p>{item.description}</p>
+          </article>
+        ))}
+      </div>
+    </AnimatedSection>
+
+    <AnimatedSection id="katalogas" className="section">
+        <header className="section-header">
+          <GradientTag>Katalogas</GradientTag>
+          <h2>Mūsų gaminami baldai</h2>
+        </header>
+        <div className="projects">
+  {furnitureContent.examples.map((examples: Example) => (
+          <article key={examples.title} className="project-card">
+            <div className="project-media" style={{ backgroundImage: `url(${examples.image})` }}>
+            </div>
+            
+            <div className="example-body">
+              <h3>{examples.title}</h3>
+              <div className="example-metrics">
+                <ul>
+              {examples.points.map((point: string) => (
+                <li key={point}>{point}</li>
+              ))}
+                </ul>               
+              </div>
+            </div>
           </article>
         ))}
       </div>

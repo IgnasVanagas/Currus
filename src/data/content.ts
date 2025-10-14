@@ -76,6 +76,12 @@ export type Advisor = {
   email: string;
 };
 
+export type Example = {
+  title: string;
+  image: string;
+  points: string[];
+}
+
 export type ContactBlock = {
   id: string;
   title: string;
@@ -91,6 +97,7 @@ export type BusinessPageContent = {
   projects: Project[];
   process: ProcessStep[];
   assurance: Assurance[];
+  examples: Example[];
   contact: ContactBlock;
 };
 
@@ -156,6 +163,7 @@ export const furnitureContent: BusinessPageContent = {
     { id: "projektai", label: "Projektai" },
     { id: "procesas", label: "Procesas" },
     { id: "garantijos", label: "Garantijos" },
+    { id: "katalogas", label: "Katalogas" },
     { id: "kontaktai", label: "Kontaktai" }
   ],
   hero: {
@@ -294,6 +302,60 @@ export const furnitureContent: BusinessPageContent = {
         "Siūlome išplėstines garantijas iki 5 metų ir papildomus priežiūros vizitus."
     }
   ],
+
+  examples: [
+    {
+      title: "Virtuvės baldai",
+      points: ["Padedame pasirinkti tinkamiausią buitinę techniką","Sumontuojame baldus Jūsų namuose","Begalė dizainų galimybių"],
+      image: "https://plus.unsplash.com/premium_photo-1680382578857-c331ead9ed51?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1332"
+    },
+    {
+      title: "Spintos",
+      points: [
+        "Padedame suplanuoti spintų išdėstymą",
+        "Pristatome visoje Lietuvoje",
+        "Konsultuojame spintų pasirinkimo klausimu"
+      ],
+      image: "https://images.unsplash.com/photo-1672137233327-37b0c1049e77?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1074"
+    },
+    {
+      title: "Vonios baldai",
+      points: [
+        "Pagaminti iš drėgmei atsparių medžiagų",
+        "Modernūs ir apipavidalinti baldai",
+        "Padedame priderinti baldus prie interjero"
+      ],
+      image: "https://plus.unsplash.com/premium_photo-1675616575514-5b06f6d74673?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=711"
+    },
+    {
+      title: "Biuro baldai",
+      points: [
+        "Užtikrinta sveika fizinė būsena ir komfortas darbo metu",
+        "Šiuolaikiški ir inovatoriški baldai, atitinkantys verslo standartus",
+        "Praktiški ir funkcionalūs baldai"
+      ],
+      image: "https://images.unsplash.com/photo-1595846265893-f433f6cca81d?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1170"
+    }, 
+    {
+      title: "Miegamojo baldai",
+      points: [
+        "Komfortą ir ramybę užtikrinantys baldai",
+        "Suteikiame konsultacijas baldų pasirinkimo klausimais",
+        "Kokybiškos medžiagos užtikrina gerą miegą"
+      ],
+      image: "https://images.unsplash.com/photo-1644057501622-dfa7dd26dbfb?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1981"
+    },
+    {
+      title: "Svetainės baldai",
+      points: [
+        "Unikalūs svetainės baldai",
+        "Jauki ir bendravimui patogi atmosfera",
+        "Praktiškas ir funkcionalus dizainas"
+      ],
+      image: "https://images.unsplash.com/photo-1600121848594-d8644e57abab?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1170"
+    }
+  ],
+
   contact: {
     id: "kontaktai",
     title: "Pasikalbėkime apie jūsų erdves",
@@ -315,6 +377,7 @@ export const partsContent: BusinessPageContent = {
     { id: "projektai", label: "Projektai" },
     { id: "procesas", label: "Procesas" },
     { id: "garantijos", label: "Kokybė" },
+    { id: "katalogas", label: "Katalogas" },
     { id: "kontaktai", label: "Kontaktai" }
   ],
   hero: {
@@ -414,6 +477,7 @@ export const partsContent: BusinessPageContent = {
       ]
     }
   ],
+
   process: [
     {
       title: "Specifikacijos analizė",
@@ -456,6 +520,37 @@ export const partsContent: BusinessPageContent = {
         "Pagal SLA sutartis reaguojame per 12 valandų ir pradedame korekcijas per 48 valandas."
     }
   ],
+  
+  examples: [
+    {
+      title: "Stiklas su grafika",
+      points: [
+        "Originalūs grafiniai piešiniai, skirti bet kokiam baldų tipui",
+        "Apsauginio tipo stiklas, kuris dužimo metu nesubyra į smulkias šukes",
+        "Gausus grafinių piešinių pasirinkimas"
+      ],
+      image: "https://images.unsplash.com/photo-1525570665650-76bb26af503d?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1170"
+    },
+    {
+      title: "Slenkančios sistemos",
+      points: [
+        "Stumdomos durys ar pertvaros",
+        "Garantuotas ilgaamžiškumas dėl naudojamų ko",
+        "Lengva pritaikyti bet kokioje patalpoje"
+      ],
+      image: "https://images.unsplash.com/photo-1722388915808-89df8087453b?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=735"
+    },
+    {
+      title: "Baldiniai fasadai",
+      points: [
+        "Begalė tekstūrų ir spalvų",
+        "Pagaminta iš natūralaus medžio",
+        "Siūlome ir aliuminius ar MDF plokščių fasadus"
+      ],
+      image: "https://images.unsplash.com/photo-1677568554453-ae5baf28da6c?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1170"
+    }
+  ],
+
   contact: {
     id: "kontaktai",
     title: "Kalbėkimės apie detales",

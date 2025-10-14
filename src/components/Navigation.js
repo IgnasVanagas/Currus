@@ -20,6 +20,7 @@ const navGroups = [
     { label: "Kaip pateikti užsakymą?", path: "/kaip-pateikti-uzsakyma" },
     { label: "darbai", path: "/darbu-galerija" },
     { label: "Naujienos", path: "/naujienos" },
+    { label: "ES parama", path: "/darbuotoju-igudziu-ugdymas" },
     { label: "Kontaktai", path: "/kontaktai" }
 ];
 export const Navigation = ({ downloadHref, downloadLabel }) => {

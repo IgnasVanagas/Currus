@@ -285,6 +285,101 @@ main.landing-main .section-stack {
   line-height: 1.6;
 }
 
+.funding {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin: 0;
+      gap: 18px;
+}
+
+.funding-header{
+  gap: 18px;
+  padding: clamp(24px, 4vw, 36px);;
+}
+
+.funding-hero{
+  /* padding: clamp(72px, 12vw, 140px) 0 clamp(32px, 8vw, 80px); */
+  text-align: center;
+  align-self: center;
+  gap: 18px;
+  margin-top: 20px;
+  margin-bottom: -80px;
+  border-radius: var(--radius-md);
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.03) 0%, rgba(0, 0, 0, 0) 100%);
+  max-width: 720px;
+}
+
+.funding-hero h1 {
+  font-size: clamp(36px, 5vw, 52px);
+  margin-bottom: clamp(16px, 3vw, 24px);
+  font-family: var(--font-heading);
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
+.funding-hero p {
+  margin: 0;
+  color: var(--color-muted);
+  font-size: clamp(16px, 2.4vw, 18px);
+  line-height: 1.7;
+}
+
+.funding-row {
+    display: flex;
+    gap: 18px;
+    width: 80%;
+}
+
+.box {
+  background: var(--color-surface);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-card);
+  height: fit-content 215px;
+  padding: clamp(24px, 4vw, 36px);
+}
+
+.box1 .box4{
+  width: min(2fr, 400px);
+} 
+
+.box2 .box3{
+  width: min(3fr, 250px);
+}
+
+.box p{
+  color: var(--color-muted);
+  margin: 0;
+}
+
+.box h2{
+  margin: 0;
+  font-size: clamp(22px, 3vw, 26px);
+}
+
+@media (max-width: 560px) {
+  .funding-row{
+    display: grid;
+    gap: 18px;
+  }
+
+  .funding{
+    display: grid;
+    align-items: center;
+    padding: 0 0 7% 7%;
+  }
+  
+  .funding-hero{
+    margin-bottom: -50px;
+  }
+
+  .box1 .box2 .box3 .box4{
+    width: 80%;
+  }
+
+}
+
 .text-link {
   color: var(--color-accent);
   font-weight: 600;
@@ -1028,6 +1123,7 @@ main.landing-main .section-stack {
   margin-top: 16px;
 }
 
+
 .section {
   padding: clamp(60px, 10vw, 120px) 0;
 }
@@ -1069,6 +1165,19 @@ main.landing-main .section-stack {
 .section-grid .grid {
   display: grid;
   gap: 24px;
+}
+
+@media (max-width: 1024px) {
+  .projects{
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .projects{
+    overflow-y: auto;
+    transform: none;
+  }
 }
 
 .grid-3 {
@@ -1132,6 +1241,23 @@ main.landing-main .section-stack {
 }
 
 .project-metrics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.example-body {
+  padding: clamp(24px, 4vw, 32px);
+  display: flex;
+  flex-direction: column;
+}
+
+.example-body h3{
+  margin: 0;
+  margin-left: 15px;
+}
+
+.example-metrics{
   display: flex;
   flex-wrap: wrap;
   gap: 12px;

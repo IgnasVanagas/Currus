@@ -57,6 +57,11 @@ export type Advisor = {
     phone: string;
     email: string;
 };
+export type Example = {
+    title: string;
+    image: string;
+    points: string[];
+};
 export type ContactBlock = {
     id: string;
     title: string;
@@ -71,6 +76,7 @@ export type BusinessPageContent = {
     projects: Project[];
     process: ProcessStep[];
     assurance: Assurance[];
+    examples: Example[];
     contact: ContactBlock;
 };
 export declare const brand: {
