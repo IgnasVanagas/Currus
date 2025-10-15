@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import { GradientTag } from "@components/GradientTag";
 import { AnimatedSection } from "@components/AnimatedSection";
 import { StatsPanel } from "@components/StatsPanel";
 import { IconBadge } from "@components/IconBadge";
@@ -24,10 +23,9 @@ const fadeIn = {
 
 export const FurnitureManufacturingPage = () => (
   <PageLayout downloadLabel={downloadLink.label} downloadHref={downloadLink.href}>
-    <section id={furnitureContent.hero.id} className="hero-section">
+    <section id={furnitureContent.hero.id} className="hero-section furniture-hero">
       <div className="hero-media" style={{ backgroundImage: `url(${furnitureContent.hero.image})` }} />
-      <div className="container hero-content">
-        <GradientTag>{furnitureContent.hero.eyebrow}</GradientTag>
+      <div className="container hero-content furniture-hero-content">
         <motion.h1 initial={fadeIn.hidden} animate={fadeIn.visible} transition={{ duration: 0.6 }}>
           {furnitureContent.hero.title}
         </motion.h1>
@@ -73,18 +71,16 @@ export const FurnitureManufacturingPage = () => (
       </div>
     </section>
 
-    <AnimatedSection id="sprendimai" className="section section-grid">
+    <AnimatedSection id="sprendimai" className="section furniture-highlights">
       <header className="section-header">
-        <GradientTag>Tikslus verslo fokusas</GradientTag>
-        <h2>Kodėl Currus Baldai</h2>
+        <h2>Kodėl klientai renkasi mus</h2>
         <p>
-          Sujungiame strategiją, dizainą ir gamybą vienoje komandoje – todėl projektai juda sparčiau, o
-ty klientų patirtys tampa konkurenciniu pranašumu.
+          Sujungiame strategiją, dizainą ir gamybą vienoje komandoje – todėl projektai juda sparčiau, o klientų patirtys tampa konkurenciniu pranašumu.
         </p>
       </header>
-      <div className="grid grid-3">
-  {furnitureContent.highlights.map((item: Highlight) => (
-          <article key={item.title} className="card">
+      <div className="furniture-highlight-grid">
+        {furnitureContent.highlights.map((item: Highlight) => (
+          <article key={item.title} className="furniture-highlight-card">
             <h3>{item.title}</h3>
             <p>{item.description}</p>
           </article>
@@ -92,17 +88,14 @@ ty klientų patirtys tampa konkurenciniu pranašumu.
       </div>
     </AnimatedSection>
 
-    <AnimatedSection id="paslaugos" className="section section-dark">
+    <AnimatedSection id="paslaugos" className="section furniture-services">
       <header className="section-header">
-        <GradientTag>Pilnas gamybos ciklas</GradientTag>
-        <h2>Paslaugos</h2>
-        <p>
-          Nuo pirmos konsultacijos iki garantinės priežiūros – esame atsakingi už kiekvieną baldo gyvavimo etapą.
-        </p>
+        <h2>Paslaugos ir kompetencijos</h2>
+        <p>Nuo pirmos konsultacijos iki priežiūros – rūpinamės kiekvienu baldo gyvavimo žingsniu.</p>
       </header>
-      <div className="grid grid-3">
-  {furnitureContent.services.map((service: Service) => (
-          <article key={service.title} className="card">
+      <div className="furniture-services-grid">
+        {furnitureContent.services.map((service: Service) => (
+          <article key={service.title} className="furniture-service-card">
             <h3>{service.title}</h3>
             <p>{service.description}</p>
             <ul>
@@ -115,26 +108,23 @@ ty klientų patirtys tampa konkurenciniu pranašumu.
       </div>
     </AnimatedSection>
 
-    <AnimatedSection id="projektai" className="section">
+    <AnimatedSection id="projektai" className="section furniture-gallery-section">
       <header className="section-header">
-        <GradientTag>Pasitikrinę vertę</GradientTag>
-        <h2>Parinkti projektai</h2>
-        <p>Turime patirties su biurų, viešbučių ir mažmeninės prekybos erdvėmis.</p>
+        <h2>Skirtingoms erdvėms pritaikyti projektai</h2>
+        <p>Interjero, komercinių ir HoReCa erdvių baldai – kiekvienam segmentui turime patikrintus sprendimus.</p>
       </header>
-      <div className="projects">
-  {furnitureContent.projects.map((project: Project) => (
-          <article key={project.title} className="project-card">
-            <div className="project-media" style={{ backgroundImage: `url(${project.image})` }}>
+      <div className="furniture-gallery">
+        {furnitureContent.projects.map((project: Project) => (
+          <article key={project.title} className="furniture-gallery-card">
+            <div className="furniture-gallery-media" style={{ backgroundImage: `url(${project.image})` }}>
               <span className="sr-only">{project.imageAlt}</span>
             </div>
-            <div className="project-body">
+            <div className="furniture-gallery-body">
               <h3>{project.title}</h3>
               <p>{project.description}</p>
-              <div className="project-metrics">
+              <div className="furniture-gallery-tags">
                 {project.metrics.map((metric: ProjectMetric) => (
-                  <IconBadge key={metric.label}>
-                    {`${metric.label}: ${metric.value}`}
-                  </IconBadge>
+                  <IconBadge key={metric.label}>{`${metric.label}: ${metric.value}`}</IconBadge>
                 ))}
               </div>
             </div>
@@ -143,14 +133,13 @@ ty klientų patirtys tampa konkurenciniu pranašumu.
       </div>
     </AnimatedSection>
 
-    <AnimatedSection id="procesas" className="section section-timeline">
+    <AnimatedSection id="procesas" className="section section-timeline furniture-process">
       <header className="section-header">
-        <GradientTag>Aiškūs žingsniai</GradientTag>
         <h2>Procesas</h2>
         <p>Transparanti gamybos eiga leidžia komandai planuoti resursus ir terminus be netikėtumų.</p>
       </header>
       <div className="timeline">
-  {furnitureContent.process.map((step: ProcessStep) => {
+        {furnitureContent.process.map((step: ProcessStep) => {
           const Icon = getProcessIcon(step.icon);
           return (
             <div key={step.title} className="timeline-step">
@@ -167,13 +156,12 @@ ty klientų patirtys tampa konkurenciniu pranašumu.
       </div>
     </AnimatedSection>
 
-    <AnimatedSection id="garantijos" className="section section-dark">
+    <AnimatedSection id="garantijos" className="section section-dark furniture-assurance">
       <header className="section-header">
-        <GradientTag>Kokybės garantijos</GradientTag>
         <h2>Ką gaunate dar?</h2>
       </header>
       <div className="grid grid-3">
-  {furnitureContent.assurance.map((item: Assurance) => (
+        {furnitureContent.assurance.map((item: Assurance) => (
           <article key={item.title} className="card">
             <h3>{item.title}</h3>
             <p>{item.description}</p>
@@ -182,10 +170,9 @@ ty klientų patirtys tampa konkurenciniu pranašumu.
       </div>
     </AnimatedSection>
 
-    <AnimatedSection id={furnitureContent.contact.id} className="section contact-section">
+    <AnimatedSection id={furnitureContent.contact.id} className="section contact-section furniture-contact">
       <div className="contact-card">
         <header>
-          <GradientTag>Susisiekite</GradientTag>
           <h2>{furnitureContent.contact.title}</h2>
           <p>{furnitureContent.contact.description}</p>
         </header>
@@ -199,9 +186,7 @@ ty klientų patirtys tampa konkurenciniu pranašumu.
             <a className="btn btn-secondary" href={`tel:${furnitureContent.contact.advisor.phone}`}>
               Skambinti {furnitureContent.contact.advisor.phone}
             </a>
-            <a className="btn btn-ghost" href={`mailto:${furnitureContent.contact.advisor.email}`}>
-              Rašyti el. laišką
-            </a>
+            <a className="btn btn-ghost" href={`mailto:${furnitureContent.contact.advisor.email}`}>{`Rašyti el. laišką`}</a>
           </div>
         </div>
       </div>

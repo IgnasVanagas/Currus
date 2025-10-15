@@ -99,7 +99,8 @@ export declare const landingContent: {
         description: string;
         path: string;
         image: string;
-        bullets: string[];
+        bullets: never[];
+        ctaLabel: string;
     }[];
 };
 export declare const furnitureContent: BusinessPageContent;

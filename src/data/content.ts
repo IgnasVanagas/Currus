@@ -113,38 +113,29 @@ export const downloadLink = {
 };
 
 export const landingContent = {
-  eyebrow: "Du strateginiai keliai",
-  title: "Modernūs baldų sprendimai",
-  description:
-    "Dirbame su pilna baldų gamyba ir specializuotomis baldų detalėmis. Išsirinkite kryptį, kad parodytume tikslinius pajėgumus, įgyvendintus projektus ir atsakingą kontaktą.",
+  eyebrow: "",
+  title: "",
+  description: "",
   options: [
     {
       id: "furniture",
       title: "Baldų gamyba",
-      description:
-        "Pilnas ciklas nuo koncepcijos iki montavimo, kai reikia sukurti funkcionalią, reprezentatyvią erdvę.",
+      description: "",
       path: "/baldu-gamyba",
       image:
         "https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=1600&q=80",
-      bullets: [
-        "Individualūs baldų sprendimai",
-        "Komercinės, biurų ir HoReCa erdvės",
-        "Projektų valdymas ir montavimas"
-      ]
+      bullets: [],
+      ctaLabel: "Rinktis baldų gamybą"
     },
     {
       id: "parts",
       title: "Baldų detalių gamyba",
-      description:
-        "Serijinių ir nestandartinių detalių gamyba, kai svarbi terminų kontrolė ir kokybės sertifikatai.",
+      description: "",
       path: "/baldu-detaliu-gamyba",
       image:
-        "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=1600&q=80",
-      bullets: [
-        "CNC apdirbimas ir furnitūra",
-        "Plačios medžiagos ir apdailos",
-        "Logistika ir kokybės protokolai"
-      ]
+        "https://www.experlogix.com/app/uploads/2024/09/Why-Furniture-Manufacturers-Need-CPQ_eBook_Thumbnail.jpg",
+      bullets: [],
+      ctaLabel: "Rinktis detalių gamybą"
     }
   ]
 };
@@ -165,7 +156,7 @@ export const furnitureContent: BusinessPageContent = {
     description:
       "Projektuojame ir gaminame verslo erdvėms pritaikytus baldus, kurie suderina ergonomiką, reprezentatyvumą ir ilgaamžiškumą.",
     image:
-      "https://images.unsplash.com/photo-1484100356142-db1e5e35afcd?auto=format&fit=crop&w=1600&q=80",
+      "https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=1600&q=80",
     stats: [
       { value: "15+", label: "metų patirtis" },
       { value: "1200+", label: "įgyvendintų projektų" },
@@ -324,7 +315,7 @@ export const partsContent: BusinessPageContent = {
     description:
       "Gaminame serijines ir nestandartines baldų detales interjero gamintojams, prekybos tinklams ir pramoniniams užsakovams.",
     image:
-      "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1600&q=80",
+      "https://www.experlogix.com/app/uploads/2024/09/Why-Furniture-Manufacturers-Need-CPQ_eBook_Thumbnail.jpg",
     stats: [
       { value: "24/7", label: "gamybos grafikas" },
       { value: "0.2 mm", label: "tikslumo tolerancija" },
